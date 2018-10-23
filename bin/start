@@ -1,0 +1,11 @@
+#!/bin/bash
+# [start]
+#
+# Script for starting project-specific shell.
+
+set -e
+
+export PROJECT_ROOT=$(git rev-parse --show-toplevel)
+export PATH="${PROJECT_ROOT}/bin:${PATH}"
+
+bash

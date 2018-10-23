@@ -1,0 +1,10 @@
+[submodule "themes/minimal-academic"]
+	path = personal_website/themes/minimal-academic
+	url = https://github.com/jhu247/minimal-academic.git
+[submodule "themes/academic"]
+	path = personal_website/themes/academic
+	url = https://github.com/gcushen/hugo-academic.git
+[submodule "personal_website/public"]
+	path = personal_website/public
+	url = git@github.com:conormcgrory/conormcgrory.github.io.git
+	branch = master

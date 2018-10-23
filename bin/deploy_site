@@ -1,0 +1,28 @@
+#!/bin/bash
+# [deploy_site]
+#
+# Bash script that automatically deploys updates to website. Must be run in
+# Hugo project root directory
+
+set -e
+
+msg="rebuilding site `date`"
+if [[ $# -eq 0 ]]; then
+    msg="Rebuilding site $(date)"
+else if [[ $# -eq 1]]; then
+    msg="$1"
+else
+    echo "Usage: deploy_site [msg]"
+    exit -1
+fi
+
+echo "Building site..."
+hugo 
+echo "Done."
+
+echo "Deploying updates to GitHub..."
+cd public
+git add .
+git commit -m "$msg"
+git push origin master
+echo "Done."
